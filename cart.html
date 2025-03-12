@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Il Tuo Carrello</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Stili di base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #111111;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+       }
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+       }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+       }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cart-container h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-details h3 {
+      margin-bottom: 5px;
+    }
+    .cart-item-details p {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    .cart-item-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .remove-btn {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .remove-btn:hover {
+      background-color: #c82333;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.4rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<header>
+  <h1>Il tuo carrello</h1>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="#">Prodotti</a>
+  <a href="#">Contatti</a>
+  <a href="cart.html">Carrello</a>
+</nav>
+
+<body>
+  <div class="cart-container">
+    <h1>Il Tuo Carrello</h1>
+    <div id="cart-items">
+      <!-- I prodotti verranno aggiunti dinamicamente qui -->
+    </div>
+    <div class="total">
+      Totale: <span id="total-price">€0.00</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 E-Commerce. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script>
+    // Array di esempio con i prodotti presenti nel carrello
+    const cartProducts = [];
+
+    // Funzione per formattare il prezzo in euro
+    function formatPrice(price) {
+      return "€" + price.toFixed(2);
+    }
+
+    // Funzione per renderizzare gli articoli del carrello e il totale
+    function renderCart() {
+      const cartItemsContainer = document.getElementById("cart-items");
+      cartItemsContainer.innerHTML = ""; // svuota il contenitore
+      let totalPrice = 0;
+
+      cartProducts.forEach((product, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+
+        // Costruisci l'HTML per l'elemento
+        itemDiv.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <div class="cart-item-details">
+            <h3>${product.name}</h3>
+            <p>Prezzo unitario: ${formatPrice(product.price)}</p>
+            <p>Quantità: ${product.quantity}</p>
+          </div>
+          <div class="cart-item-price">
+            ${formatPrice(product.price * product.quantity)}
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Rimuovi</button>
+        `;
+
+        cartItemsContainer.appendChild(itemDiv);
+        totalPrice += product.price * product.quantity;
+      });
+
+      document.getElementById("total-price").textContent = formatPrice(totalPrice);
+    }
+
+    // Funzione per rimuovere un prodotto dal carrello
+    function removeItem(index) {
+      cartProducts.splice(index, 1);
+      renderCart();
+    }
+
+    // Render iniziale del carrello
+    renderCart();
+  </script>
+</body>
+</html>
