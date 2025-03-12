@@ -20,6 +20,7 @@
            background-color: #111111;
            display: flex;
            flex-direction: column;
+           height: 100%;
        }
        header {
            background-color: #333;
@@ -48,23 +49,29 @@
            padding: 0 20px; 
        }
        .products {
-           display: flex;
-           justify-content: flex-start;
-           gap: 20px;
-       }
-       .product {
-           background: #333;
-           border: 1px solid #ccc;
-           padding: 15px;
-           color: #fff;
-           text-align: center;
-           border-radius: 5px;
-           cursor: pointer;
-           transition: transform 0.2s;
-       }
-       .product:hover {
-           transform: scale(1.02);
-       }
+            display: flex;
+            flex-wrap: wrap; /* Aggiungi questa proprietà per permettere la divisione dei prodotti su più righe */
+            justify-content: space-between; /* Spazio uguale tra gli articoli */
+            gap: 20px;
+        }
+
+        .product {
+            background: #333;
+            border: 1px solid #ccc;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: calc(25% - 20px); /* Aggiungi questa proprietà per avere massimo 4 prodotti per riga */
+            box-sizing: border-box;
+        }
+
+        .product:hover {
+            transform: scale(1.02);
+        }
+
        .product img {
            max-width: 100%;
            height: auto;
@@ -89,14 +96,14 @@
            background-color: #218838;
        }
        footer {
-           background-color: #333;
-           color: #fff;
-           text-align: center;
-           padding: 20px;
-           position: absolute;
-           bottom: 0;
-           width: 100%;
-       }
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Rimuove la posizione fissa */
+            width: 100%;
+            margin-top: auto; /* Questo spinge il footer sempre al fondo */
+        }
     </style>
 </head>
 <body>
@@ -113,6 +120,7 @@
 
     <div class="container">
         <section class="products">
+            <!-- Prodotto 1 -->
             <div class="product">
                 <img src="stussy.png" alt="Prodotto 1">
                 <h2>Prodotto 1</h2>
@@ -121,6 +129,7 @@
                 <button onclick="addToCart({name: 'Prodotto 1', price: 29.99, image: 'stussy.png'})">Aggiungi al carrello</button>
             </div>
 
+            <!-- Prodotto 2 -->
             <div class="product">
                 <img src="giostre.jpg" alt="Prodotto 2">
                 <h2>Prodotto 2</h2>
@@ -129,6 +138,7 @@
                 <button onclick="addToCart({name: 'Prodotto 2', price: 39.99, image: 'giostre.jpg'})">Aggiungi al carrello</button>
             </div>
 
+            <!-- Prodotto 3 -->
             <div class="product">
                 <img src="porsche.jpg" alt="Prodotto 3">
                 <h2>Prodotto 3</h2>
@@ -137,6 +147,7 @@
                 <button onclick="addToCart({name: 'Prodotto 3', price: 19.99, image: 'porsche.jpg'})">Aggiungi al carrello</button>
             </div>
 
+            <!-- Prodotto 4 -->
             <div class="product">
                 <img src="maglietta.JPG" alt="Prodotto 4">
                 <h2>Prodotto 4</h2>
@@ -144,7 +155,60 @@
                 <p><strong>€49.99</strong></p>
                 <button onclick="addToCart({name: 'Prodotto 4', price: 49.99, image: 'maglietta.JPG'})">Aggiungi al carrello</button>
             </div>
-            <!-- Aggiungi ulteriori prodotti qui -->
+
+            <!-- Prodotto 5 -->
+            <div class="product">
+                <img src="scarpe.jpg" alt="Prodotto 5">
+                <h2>Prodotto 5</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€69.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 5', price: 69.99, image: 'scarpe.jpg'})">Aggiungi al carrello</button>
+            </div>
+
+            <!-- Prodotto 6 -->
+            <div class="product">
+                <img src="borsa.jpg" alt="Prodotto 6">
+                <h2>Prodotto 6</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€59.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 6', price: 59.99, image: 'borsa.jpg'})">Aggiungi al carrello</button>
+            </div>
+
+            <!-- Prodotto 7 -->
+            <div class="product">
+                <img src="orologio.jpg" alt="Prodotto 7">
+                <h2>Prodotto 7</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€79.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 7', price: 79.99, image: 'orologio.jpg'})">Aggiungi al carrello</button>
+            </div>
+
+            <!-- Prodotto 8 -->
+            <div class="product">
+                <img src="occhiali.jpg" alt="Prodotto 8">
+                <h2>Prodotto 8</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€89.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 8', price: 89.99, image: 'occhiali.jpg'})">Aggiungi al carrello</button>
+            </div>
+
+            <!-- Prodotto 9 -->
+            <div class="product">
+                <img src="zaino.jpg" alt="Prodotto 9">
+                <h2>Prodotto 9</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€99.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 9', price: 99.99, image: 'zaino.jpg'})">Aggiungi al carrello</button>
+            </div>
+
+            <!-- Prodotto 10 -->
+            <div class="product">
+                <img src="giacca.jpg" alt="Prodotto 10">
+                <h2>Prodotto 10</h2>
+                <p>Breve descrizione del prodotto.</p>
+                <p><strong>€119.99</strong></p>
+                <button onclick="addToCart({name: 'Prodotto 10', price: 119.99, image: 'giacca.jpg'})">Aggiungi al carrello</button>
+            </div>
         </section>
     </div>
 
