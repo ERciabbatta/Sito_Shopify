@@ -29,8 +29,20 @@
             background-color: #444;
             color: #fff;
             padding: 10px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .login-link {
+            margin-left: auto;
+        }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -55,7 +67,6 @@
 
         .product {
             background: #333;
-            border: 1px solid #ccc;
             padding: 15px;
             color: #fff;
             text-align: center;
@@ -109,11 +120,16 @@
     </header>
 
     <nav>
-        <a href="home.html">Home</a>
-        <a href="products.html">Prodotti</a>
-        <a href="contact.html">Contatti</a>
-        <a href="cart.html">Carrello</a>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="products.html">Prodotti</a>
+            <a href="contact.html">Contatti</a>
+            <a href="cart.html">Carrello</a>
+        </div>
+        <a href="login.html" class="login-link">Login</a>
     </nav>
+    
+
     <div class="container">
         <section class="products">
             <!-- Prodotto 1 -->

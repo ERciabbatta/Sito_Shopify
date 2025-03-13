@@ -20,27 +20,38 @@
       overflow-y: auto
     }
     header {
-            background-color: #333;
-            padding: 20px;
-            text-align: center;
-            color: #fff;
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
 
         }
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .login-link {
+        margin-left: auto;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
     .cart-container {
       max-width: 1800px;
       width: 1800px;
@@ -117,11 +128,15 @@
 </header>
 
 <nav>
-  <a href="home.html">Home</a>
-  <a href="products.html">Prodotti</a>
-  <a href="contact.html">Contatti</a>
-  <a href="cart.html">Carrello</a>
+  <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="products.html">Prodotti</a>
+      <a href="contact.html">Contatti</a>
+      <a href="cart.html">Carrello</a>
+  </div>
+  <a href="login.html" class="login-link">Login</a>
 </nav>
+
 
 <body>
   <div class="cart-container">
