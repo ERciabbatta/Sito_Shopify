@@ -17,7 +17,8 @@
       background-color: #111111;
       display: flex;
       flex-direction: column;
-      overflow-y: auto
+      overflow-y: auto;
+      min-height: 100vh;
     }
     header {
       background-color: #333;
@@ -110,13 +111,29 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    .buy {
+      text-align: right;
+      font-size: 1.5rem !important;
+      font-weight: bold;
+      background-color: #43c43f;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .buy:hover{
+      background-color: #058d00;
+    }
     footer {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-            color: #fff;
-        }
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      color: #fff;
+      margin-top: auto;
+    }
   </style>
 </head>
 
@@ -144,6 +161,11 @@
     <div class="total">
       Totale: <span id="total-price">€0.00</span>
     </div>
+
+    <div style="text-align: right;">
+      <button class="buy">Compra!</button>
+    </div>
+
   </div>
 
   <script>
