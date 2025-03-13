@@ -52,24 +52,33 @@
 
         .hero-section {
             display: flex;
-            justify-content: space-between; /* Allinea le immagini orizzontalmente */
+            justify-content: center;
             align-items: center;
             margin-bottom: 40px;
-            flex-direction: row;
             padding: 20px;
+            gap: 10px; /* Leggero margine tra le immagini */
         }
 
-        .hero-section img {
-            width: 33%; /* Ogni immagine occuperà un terzo della larghezza */
+        .hero-img {
+            width: 30%; /* Tutte le immagini avranno la stessa dimensione */
             height: auto;
-            object-fit: cover; /* Ritaglia l'immagine per mantenere il formato 16:9 */
-            aspect-ratio: 16 / 9; /* Mantiene il formato 16:9 */
+            object-fit: cover;
+            aspect-ratio: 16 / 9;
             border-radius: 8px;
+            transition: transform 0.25s ease;
+        }
+        
+        .hero-img:hover {
+            transform: scale(1.2);
         }
 
-        .hero-section .text {
-            width: 33%;
+        .text {
             text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-section h2 {
@@ -91,6 +100,7 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
+            margin-top: 30px;
         }
 
         .container {
@@ -129,20 +139,20 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero-section">
-            <!-- Immagine sinistra -->
-            <img src="cursore.png" alt="Immagine sinistra" />
-
-            <!-- Immagine centrale con il testo sotto -->
-            <div class="text">
-                <img src="porsche.jpg" alt="Immagine centrale" /> <!-- Immagine centrale -->
-                <h2>Scopri il nostro mondo</h2>
-                <p>Un'ampia selezione di prodotti di alta qualità per te!</p>
-                <a href="products.html" class="hero-button">Esplora i prodotti</a>
-            </div>
-
-            <!-- Immagine destra -->
-            <img src="giostre.jpg" alt="Immagine destra" />
+            <img class="hero-img" src="cursore.png" alt="Immagine sinistra" />
+            <img class="hero-img" src="giostre.jpg" alt="Immagine sinistra" />
+            <img class="hero-img" src="porsche.jpg" alt="Immagine centrale" />
+            <img class="hero-img" src="giostre.jpg" alt="Immagine destra" />
+            <img class="hero-img" src="cursore.png" alt="Immagine destra" />
+            <img class="hero-img" src="porsche.jpg" alt="Immagine destra" />
         </section>
+        
+        <div class="text">
+            <h2>Scopri il nostro mondo</h2>
+            <p>Un'ampia selezione di prodotti di alta qualità per te!</p>
+            <a href="products.html" class="hero-button">Esplora i prodotti</a>
+        </div>
+        
     </div>
 
     <footer>
