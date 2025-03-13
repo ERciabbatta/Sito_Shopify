@@ -163,12 +163,13 @@
     </div>
 
     <div style="text-align: right;">
-      <button class="buy">Compra!</button>
+      <button id="compra" class="buy">Compra!</button>
     </div>
 
   </div>
 
   <script>
+
     // Recupera i prodotti dal localStorage
     function getCartFromStorage() {
       return JSON.parse(localStorage.getItem('cart')) || [];
