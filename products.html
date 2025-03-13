@@ -199,6 +199,26 @@
         </section>
     </div>
 
+    <script>
+        // Funzione per aggiungere un prodotto al carrello
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Controlla se il prodotto è già nel carrello
+            const existingProduct = cart.find(item => item.name === product.name);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Se esiste, aumenta la quantità
+            } else {
+                product.quantity = 1; // Se non esiste, aggiungi il nuovo prodotto con quantità 1
+                cart.push(product);
+            }
+
+            // Salva il carrello nel localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+
     <footer>
         <p>© 2025 E-Commerce. Tutti i diritti riservati.</p>
     </footer>
