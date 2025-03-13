@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Contattaci</title>
+    <title>Accedi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         /* Reset */
@@ -16,7 +16,6 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #111;
-            color: #fff;
             display: flex;
             flex-direction: column;
         }
@@ -24,6 +23,7 @@
             background-color: #333;
             padding: 20px;
             text-align: center;
+            color: #fff;
         }
         nav {
             background-color: #444;
@@ -42,6 +42,7 @@
         .login-link {
             margin-left: auto;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -55,6 +56,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            color: #fff;
         }
         .form-box {
             background: #222;
@@ -108,13 +110,14 @@
             text-align: center;
             padding: 10px;
             width: 100%;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Contattaci</h1>
+        <h1>Accedi al Tuo Account</h1>
     </header>
 
     <nav>
@@ -126,33 +129,20 @@
         </div>
         <a href="login.html" class="login-link">Login</a>
     </nav>
-    
 
     <div class="container">
         <div class="form-box">
-            <h2>Scrivici un messaggio</h2>
+            <h2>Accedi al tuo account</h2>
             <form>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" placeholder="Inserisci il tuo nome">
-                </div>
-                <div class="form-group">
-                    <label for="cognome">Cognome</label>
-                    <input type="text" id="cognome" placeholder="Inserisci il tuo cognome">
-                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Inserisci la tua email">
                 </div>
                 <div class="form-group">
-                    <label for="oggetto">Oggetto</label>
-                    <input type="text" id="oggetto" placeholder="Inserisci l'oggetto del messaggio">
+                    <label for="oggetto">Password</label>
+                    <input type="text" id="oggetto" placeholder="Inserisci la tua password">
                 </div>
-                <div class="form-group">
-                    <label for="messaggio">Messaggio</label>
-                    <textarea id="messaggio" placeholder="Scrivi il tuo messaggio..."></textarea>
-                </div>
-                <button type="submit" class="btn">Invia</button>
+                <button type="submit" class="btn">Accedi</button>
             </form>
         </div>
     </div>
@@ -160,5 +150,6 @@
     <footer>
         <p>© 2025 E-Commerce. Tutti i diritti riservati.</p>
     </footer>
+
 </body>
 </html>
